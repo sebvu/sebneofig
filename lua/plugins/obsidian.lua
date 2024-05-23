@@ -101,6 +101,22 @@ return {
 						-- Return nil if no matching file is found
 						return nil
 					end,
+					tags = function()
+						-- Get the directory of the current buffer
+						local dirname = vim.fn.expand("%:p:h")
+
+						-- Iterate over files in the directory
+						for _, file in ipairs(vim.fn.readdir(dirname)) do
+							-- Check if the file matches the PROF- pattern
+							local all_tags = string.match(file, "^TAGS%-(.+)$")
+							if all_tags then
+								-- Extract professor name from the matched pattern
+								return all_tags
+							end
+						end
+						-- Return nil if no matching file is found
+						return nil
+					end,
 				},
 				-- A map for custom variables, the key should be the varible and the value a function
 			},
