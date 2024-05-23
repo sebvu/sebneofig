@@ -23,9 +23,15 @@ return {
 		local opts = { noremap = true, silent = true }
 		-- keymaps
 		vim.keymap.set("n", "<leader>ot", "<cmd>ObsidianToggleCheckbox<CR>", opts) -- toggle/create checkbox
-		vim.keymap.set("n", "<leader>of", "<cmd>ObsidianFollowLink<CR>", opts) -- follows link under cursor
+		-- to follow a link, click gf
 
 		obsidian.setup({
+			templates = {
+				folder = "templates",
+				date_format = "%Y-%m-%d-%a",
+				time_format = "%H:%M",
+				-- A map for custom variables, the key should be the varible and the value a function
+			},
 			workspaces = {
 				{
 					name = "JesterBrain",
