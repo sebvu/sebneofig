@@ -27,7 +27,7 @@ return {
 
 		obsidian.setup({
 			templates = {
-				folder = "templates",
+				folder = "brain/templates",
 				date_format = "%Y-%m-%d-%a",
 				time_format = "%H:%M",
 				substitutions = {
