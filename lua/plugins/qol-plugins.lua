@@ -5,14 +5,6 @@ return {
 
 	-- Tmux Navigator for seamless navigation between nvim and tmux panes
 	{ "christoomey/vim-tmux-navigator" },
-	-- Clipboard paster to compliment markdown editing {
-	{
-		"HakonHarnes/img-clip.nvim",
-		event = "VeryLazy",
-		config = function()
-			vim.keymap.set("n", "<C-p>", "<cmd>PasteImage<CR>", opts)
-		end,
-	},
 	-- Hardtime plugin for preventing bad habits taking over, not really QOL..
 	{
 		"m4xshen/hardtime.nvim",
