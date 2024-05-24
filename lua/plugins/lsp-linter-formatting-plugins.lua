@@ -22,6 +22,7 @@ return {
 						"ruff",
 						"black",
 						"isort",
+						"cpplint",
 					},
 				})
 			end,

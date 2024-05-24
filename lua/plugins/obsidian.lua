@@ -25,9 +25,27 @@ return {
 		vim.keymap.set("n", "<leader>ot", "<cmd>ObsidianToggleCheckbox<CR>", opts) -- toggle/create checkbox
 		-- to follow a link, click gf
 
+		-- Define local function to search for files matching a specific pattern
+		local grepafterkey = function(key)
+			-- Get the directory of the current buffer
+			local dirname = vim.fn.expand("%:p:h")
+
+			-- Iterate over files in the directory
+			for _, file in ipairs(vim.fn.readdir(dirname)) do
+				-- Check if the file matches the key pattern
+				local match = string.match(file, "^" .. key .. "%-(.+)$")
+				if match then
+					-- Extract match from the matched pattern
+					return match
+				end
+			end
+			-- Return nil if no matching file is found
+			return nil
+		end
+
 		obsidian.setup({
 			templates = {
-				folder = "brain/templates",
+				folder = "templates",
 				date_format = "%Y-%m-%d-%a",
 				time_format = "%H:%M",
 				substitutions = {
@@ -69,53 +87,15 @@ return {
 						end
 						return table.concat(words, " ")
 					end,
-					professor = function()
-						-- Get the directory of the current buffer
-						local dirname = vim.fn.expand("%:p:h")
-
-						-- Iterate over files in the directory
-						for _, file in ipairs(vim.fn.readdir(dirname)) do
-							-- Check if the file matches the PROF- pattern
-							local professor_name = string.match(file, "^PROF%-(.+)$")
-							if professor_name then
-								-- Extract professor name from the matched pattern
-								return professor_name
-							end
-						end
-						-- Return nil if no matching file is found
-						return nil
-					end,
-					office_hours = function()
-						-- Get the directory of the current buffer
-						local dirname = vim.fn.expand("%:p:h")
-
-						-- Iterate over files in the directory
-						for _, file in ipairs(vim.fn.readdir(dirname)) do
-							-- Check if the file matches the PROF- pattern
-							local office_hours = string.match(file, "^OHRS%-(.+)$")
-							if office_hours then
-								-- Extract professor name from the matched pattern
-								return office_hours
-							end
-						end
-						-- Return nil if no matching file is found
-						return nil
-					end,
-					tags = function()
-						-- Get the directory of the current buffer
-						local dirname = vim.fn.expand("%:p:h")
-
-						-- Iterate over files in the directory
-						for _, file in ipairs(vim.fn.readdir(dirname)) do
-							-- Check if the file matches the PROF- pattern
-							local all_tags = string.match(file, "^TAGS%-(.+)$")
-							if all_tags then
-								-- Extract professor name from the matched pattern
-								return all_tags
-							end
-						end
-						-- Return nil if no matching file is found
-						return nil
+					professor = grepafterkey("PROF"),
+					office_hours = grepafterkey("OHRS"),
+					tags = grepafterkey("TAGS"),
+					weeks_since_start = function()
+						-- Get the file name of the current buffer
+						local filename = vim.fn.expand("%:t:r")
+						-- Match the week number after 'week-'
+						local week_number = string.match(filename, "^week%-(%d+)$")
+						return week_number
 					end,
 				},
 				-- A map for custom variables, the key should be the varible and the value a function
