@@ -44,6 +44,11 @@ return {
 		end
 
 		obsidian.setup({
+			follow_url_func = function(url)
+				-- Open the URL in the default web browser.
+				vim.fn.jobstart({ "xdg-open", url }) -- linux
+			end,
+
 			templates = {
 				folder = "templates",
 				date_format = "%Y-%m-%d-%a",
