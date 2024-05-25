@@ -1,10 +1,10 @@
 -- ❗CONFIGURATION GUIDE FOR THIS SPECIFIC CONFIGURATION❗
 --
 -- 🚀 mason-tool-installer.nvim: automatically install any mason.nvim LSPs not already installed
---      - ^ add all new MASON packages there
+--      - add all new MASON packages there (ALL LSPs, LINTERS AND FORMATTERS by their MASONLSP name, not actual LSP name)
 -- 🍹 mason-lspconfig: add any newly installed LSPs
 -- for lsp languge servers, refer to the github: https://github.com/williamboman/mason-lspconfig.nvim
---      - in ensure_installed
+--      - in ensure_installed (add the name of the actual LSP name)
 --      - in lspconfig.language.setup({})
 -- 💬 nvim-lint: add new linter
 --      - linter_by_ft language = { linter } | { { languagem language } } (will choose one or another)
@@ -45,6 +45,10 @@ return {
 						"stylua",
 						"typescript-language-server",
 						"yaml-language-server",
+						"markuplint",
+						"stylelint",
+						-- "html-lsp",
+						-- "css-lsp",
 					},
 				})
 			end,
@@ -64,8 +68,8 @@ return {
 					"tsserver", -- js/ts
 					"pyright", -- python
 					"yamlls", -- yaml
-					"cssls", -- css
-					"html", -- html
+					-- "html", -- html
+					-- "cssls", -- css
 				},
 			})
 		end,
@@ -129,14 +133,14 @@ return {
 				capabilities = capabilities,
 				on_attach = on_attach,
 			})
-			lspconfig.cssls.setup({ -- css langauge server
-				capabilities = capabilities,
-				on_attach = on_attach,
-			})
-			lspconfig.html.setup({ -- html langauge server
-				capabilities = capabilities,
-				on_attach = on_attach,
-			})
+			-- lspconfig.cssls.setup({ -- css langauge server
+			-- 	capabilities = capabilities,
+			-- 	on_attach = on_attach,
+			-- })
+			-- lspconfig.html.setup({ -- html langauge server
+			-- 	capabilities = capabilities,
+			-- 	on_attach = on_attach,
+			-- })
 		end,
 	},
 
