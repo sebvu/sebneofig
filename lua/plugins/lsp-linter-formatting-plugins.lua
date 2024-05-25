@@ -3,6 +3,7 @@
 -- 🚀 mason-tool-installer.nvim: automatically install any mason.nvim LSPs not already installed
 --      - ^ add all new MASON packages there
 -- 🍹 mason-lspconfig: add any newly installed LSPs
+-- for lsp languge servers, refer to the github: https://github.com/williamboman/mason-lspconfig.nvim
 --      - in ensure_installed
 --      - in lspconfig.language.setup({})
 -- 💬 nvim-lint: add new linter
@@ -55,7 +56,17 @@ return {
 		config = function()
 			require("mason-lspconfig").setup({
 				-- ADD NEW LSP HERE
-				ensure_installed = { "lua_ls", "clangd", "bashls", "marksman", "tsserver", "pyright", "yamlls" },
+				ensure_installed = {
+					"lua_ls", -- lua
+					"clangd", -- cpp
+					"bashls", -- bash
+					"marksman", -- markdown
+					"tsserver", -- js/ts
+					"pyright", -- python
+					"yamlls", -- yaml
+					"cssls", -- css
+					"html", -- html
+				},
 			})
 		end,
 	},
@@ -118,6 +129,14 @@ return {
 				capabilities = capabilities,
 				on_attach = on_attach,
 			})
+			lspconfig.cssls.setup({ -- css langauge server
+				capabilities = capabilities,
+				on_attach = on_attach,
+			})
+			lspconfig.html.setup({ -- html langauge server
+				capabilities = capabilities,
+				on_attach = on_attach,
+			})
 		end,
 	},
 
@@ -139,6 +158,9 @@ return {
 				svelte = { "eslint_d" },
 				python = { "ruff" },
 				cpp = { "cpplint" },
+				html = { "markuplint" },
+				css = { "stylelint" },
+
 				-- markdown = { "markdownlint" },
 			}
 
