@@ -1,3 +1,17 @@
+-- ❗CONFIGURATION GUIDE FOR THIS SPECIFIC CONFIGURATION❗
+--
+-- 🚀 mason-tool-installer.nvim: automatically install any mason.nvim LSPs not already installed
+--      - ^ add all new MASON packages there
+-- 🍹 mason-lspconfig: add any newly installed LSPs
+--      - in ensure_installed
+--      - in lspconfig.language.setup({})
+-- 💬 nvim-lint: add new linter
+--      - linter_by_ft language = { linter } | { { languagem language } } (will choose one or another)
+-- 📚 conform-nvim: add new formatter
+--      - formatter_by_ft language = { formatter } | { { language, language } } (choose one or another)
+--
+-- ❗CONFIGURATION GUIDE FOR THIS SPECIFIC CONFIGURATION❗
+
 return {
 	{ -- portable package manager for installing LSPs, DAPs, linters and formatters.
 		"williamboman/mason.nvim",
@@ -11,18 +25,25 @@ return {
 				require("mason-tool-installer").setup({
 					ensure_installed = {
 						-- ADD NEW MASON PACKAGE HERE
+						"actionlint",
+						"bash-language-server",
+						"black",
+						"clang-format",
+						"clangd",
+						"cpplint",
 						"eslint_d",
-						"stylua",
+						"isort",
+						"lua-language-server",
+						"markdownlint",
+						"marksman",
 						"prettier",
 						"prettierd",
-						"clang-format",
-						"shellharden",
-						-- "markdownlint",
-						"actionlint",
+						"pyright",
 						"ruff",
-						"black",
-						"isort",
-						"cpplint",
+						"shellharden",
+						"stylua",
+						"typescript-language-server",
+						"yaml-language-server",
 					},
 				})
 			end,
