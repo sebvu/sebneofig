@@ -133,11 +133,11 @@ return {
 				capabilities = capabilities,
 				on_attach = on_attach,
 			})
-			-- lspconfig.cssls.setup({ -- css langauge server
+			-- lspconfig.cssls.setup({ -- css langauge server (not needed as it conflicts with prettierd)
 			-- 	capabilities = capabilities,
 			-- 	on_attach = on_attach,
 			-- })
-			-- lspconfig.html.setup({ -- html langauge server
+			-- lspconfig.html.setup({ -- html langauge server (not needed as it conflicts with prettierd)
 			-- 	capabilities = capabilities,
 			-- 	on_attach = on_attach,
 			-- })
@@ -162,8 +162,8 @@ return {
 				svelte = { "eslint_d" },
 				python = { "ruff" },
 				cpp = { "cpplint" },
-				html = { "markuplint" },
-				css = { "stylelint" },
+				-- html = { "markuplint" }, (not needed as it conflicts with prettierd)
+				-- css = { "stylelint" }, (not needed as it conflicts with prettierd)
 
 				-- markdown = { "markdownlint" },
 			}
