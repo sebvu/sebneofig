@@ -25,7 +25,7 @@ return {
 			config = function()
 				require("mason-tool-installer").setup({
 					ensure_installed = {
-						-- ADD NEW MASON PACKAGE HERE
+						-- ADD NEW MASON PACKAGE HERE (MASON NAME)
 						"actionlint",
 						"bash-language-server",
 						"black",
@@ -47,8 +47,8 @@ return {
 						"yaml-language-server",
 						"markuplint",
 						"stylelint",
-						-- "html-lsp",
-						-- "css-lsp",
+						"html-lsp",
+						"css-lsp",
 					},
 				})
 			end,
@@ -59,7 +59,7 @@ return {
 		-- for lsp languge servers, refer to the github: https://github.com/williamboman/mason-lspconfig.nvim
 		config = function()
 			require("mason-lspconfig").setup({
-				-- ADD NEW LSP HERE
+				-- ADD NEW LSP HERE (GITHUB NAME)
 				ensure_installed = {
 					"lua_ls", -- lua
 					"clangd", -- cpp
@@ -68,8 +68,8 @@ return {
 					"tsserver", -- js/ts
 					"pyright", -- python
 					"yamlls", -- yaml
-					-- "html", -- html
-					-- "cssls", -- css
+					"html", -- html
+					"cssls", -- css
 				},
 			})
 		end,
@@ -133,14 +133,14 @@ return {
 				capabilities = capabilities,
 				on_attach = on_attach,
 			})
-			-- lspconfig.cssls.setup({ -- css langauge server (not needed as it conflicts with prettierd)
-			-- 	capabilities = capabilities,
-			-- 	on_attach = on_attach,
-			-- })
-			-- lspconfig.html.setup({ -- html langauge server (not needed as it conflicts with prettierd)
-			-- 	capabilities = capabilities,
-			-- 	on_attach = on_attach,
-			-- })
+			lspconfig.cssls.setup({ -- css
+				capabilities = capabilities,
+				on_attach = on_attach,
+			})
+			lspconfig.html.setup({ -- html
+				capabilities = capabilities,
+				on_attach = on_attach,
+			})
 		end,
 	},
 
