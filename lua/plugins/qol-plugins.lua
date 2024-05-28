@@ -47,6 +47,12 @@ return {
 	{
 		"fladson/vim-kitty",
 	},
+	-- Adding indentation lines
+	{
+		"lukas-reineke/indent-blankline.nvim",
+		main = "ibl",
+		opts = {},
+	},
 	-- Colorizer for colorizing hex codes and other readable colors
 	{
 		"norcalli/nvim-colorizer.lua",

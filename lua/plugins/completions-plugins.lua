@@ -2,7 +2,25 @@ return {
 	-- reaches out to any lsps attached to current buffer, and ask for completion recommendations and further expands it
 	{ "hrsh7th/cmp-nvim-lsp" },
 	-- copilot autocomplete
-	{ "github/copilot.vim" },
+	{
+		"zbirenbaum/copilot.lua",
+		cmd = "Copilot",
+		event = "InsertEnter",
+		config = function()
+			require("copilot").setup({
+				suggestion = { enabled = false },
+				panel = { enabled = false },
+			})
+		end,
+		dependencies = {
+			{
+				"zbirenbaum/copilot-cmp",
+				config = function()
+					require("copilot_cmp").setup({})
+				end,
+			},
+		},
+	},
 	-- possible dependency
 	{ "hrsh7th/cmp-cmdline" },
 	-- using luasnip for cmp
@@ -40,6 +58,7 @@ return {
 					["<CR>"] = cmp.mapping.confirm({ select = true }),
 				}),
 				sources = cmp.config.sources({
+					{ name = "copilot", group_index = 2 },
 					{ name = "nvim_lsp" },
 					{ name = "luasnip" }, -- For luasnip users.
 				}, {
