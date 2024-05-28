@@ -15,6 +15,7 @@
   "icon-picker.nvim": { "branch": "master", "commit": "3ee9a0ea9feeef08ae35e40c8be6a2fa2c20f2d3" },
   "indent-blankline.nvim": { "branch": "master", "commit": "d98f537c3492e87b6dc6c2e3f66ac517528f406f" },
   "lazy.nvim": { "branch": "main", "commit": "24fa2a97085ca8a7220b5b078916f81e316036fd" },
+  "lspkind.nvim": { "branch": "master", "commit": "1735dd5a5054c1fb7feaf8e8658dbab925f4f0cf" },
   "lspsaga.nvim": { "branch": "main", "commit": "0e2e116ade87034b2983ba0d5460af731fb1fc28" },
   "lualine.nvim": { "branch": "master", "commit": "0a5a66803c7407767b799067986b4dc3036e1983" },
   "mason-lspconfig.nvim": { "branch": "main", "commit": "a4caa0d083aab56f6cd5acf2d42331b74614a585" },

@@ -33,6 +33,8 @@ opt.completeopt = "menuone,noinsert,noselect" -- define how the completion menu 
 -- noselect - nothing will be selected by default
 
 -- Behavior
+
+opt.showmode = false -- disables notification for mode changes
 opt.hidden = true -- change buffers without saving
 opt.errorbells = false -- disable error noises
 opt.swapfile = false -- no swap files, (PLEASE CHECK ON YOUR OWN JESTER)
