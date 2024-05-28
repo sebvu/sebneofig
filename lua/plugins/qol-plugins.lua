@@ -53,6 +53,16 @@ return {
 		main = "ibl",
 		opts = {},
 	},
+	-- Markdown Previewer
+	{
+		"iamcco/markdown-preview.nvim",
+		cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
+		build = "cd app && yarn install",
+		init = function()
+			vim.g.mkdp_filetypes = { "markdown" }
+		end,
+		ft = { "markdown" },
+	},
 	-- Colorizer for colorizing hex codes and other readable colors
 	{
 		"norcalli/nvim-colorizer.lua",
