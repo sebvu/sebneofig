@@ -24,5 +24,5 @@ vim.keymap.set("n", "<C-d>", "<C-d>zz") -- move down half a page and center
 vim.keymap.set("n", "<C-u>", "<C-u>zz") -- move up half a page and center
 
 -- Allow for natural Ctrl+/ commenting
-vim.api.nvim_set_keymap("n", "<C-_>", "gcc", { noremap = false })
-vim.api.nvim_set_keymap("v", "<C-_>", "gc", { noremap = false })
+vim.keymap.set("n", "<C-_>", "gcc gv", { remap = true })
+vim.keymap.set("v", "<C-_>", "gc gv", { remap = true })
