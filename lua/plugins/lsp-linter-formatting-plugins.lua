@@ -161,7 +161,7 @@ return {
 				typescriptreact = { "eslint_d" },
 				svelte = { "eslint_d" },
 				python = { "ruff" },
-				cpp = { "cpplint" },
+				-- cpp = { "cpplint" },
 				bash = { "shellharden" },
 				-- html = { "markuplint" }, (not needed as it conflicts with prettierd)
 				-- css = { "stylelint" }, (not needed as it conflicts with prettierd)

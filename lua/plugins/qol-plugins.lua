@@ -26,15 +26,6 @@ return {
 	},
 	-- Highlighted yank for better visual feedback
 	{ "machakann/vim-highlightedyank", lazy = false },
-	-- Tailwind colorizer for selecting tailwind colors
-	{
-		"roobert/tailwindcss-colorizer-cmp.nvim",
-		config = function()
-			require("tailwindcss-colorizer-cmp").setup({
-				color_square_width = 2,
-			})
-		end,
-	},
 	-- Git signs for implementing easy git differentiation
 	{
 		"lewis6991/gitsigns.nvim",
@@ -42,10 +33,6 @@ return {
 			require("gitsigns").setup()
 			vim.keymap.set("n", "<leader>gp", "<cmd>Gitsigns preview_hunk_inline<CR>", opts) -- preview hunk inline
 		end,
-	},
-	-- Kitty Conf syntax highlighting
-	{
-		"fladson/vim-kitty",
 	},
 	-- Adding indentation lines
 	{
@@ -65,9 +52,10 @@ return {
 	},
 	-- Colorizer for colorizing hex codes and other readable colors
 	{
-		"norcalli/nvim-colorizer.lua",
+		"NvChad/nvim-colorizer.lua",
 		config = function()
-			require("colorizer").setup({
+			local colorizer = require("colorizer")
+			colorizer.setup({
 				filetypes = { "*" },
 				user_default_options = {
 					RGB = true, -- #RGB hex codes
@@ -75,10 +63,10 @@ return {
 					names = true, -- "Name" codes like Blue or blue
 					RRGGBBAA = false, -- #RRGGBBAA hex codes
 					AARRGGBB = false, -- 0xAARRGGBB hex codes
-					rgb_fn = false, -- CSS rgb() and rgba() functions
-					hsl_fn = false, -- CSS hsl() and hsla() functions
-					css = false, -- Enable all CSS features: rgb_fn, hsl_fn, names, RGB, RRGGBB
-					css_fn = false, -- Enable all CSS *functions*: rgb_fn, hsl_fn
+					rgb_fn = true, -- CSS rgb() and rgba() functions
+					hsl_fn = true, -- CSS hsl() and hsla() functions
+					css = true, -- Enable all CSS features: rgb_fn, hsl_fn, names, RGB, RRGGBB
+					css_fn = true, -- Enable all CSS *functions*: rgb_fn, hsl_fn
 					-- Available modes for `mode`: foreground, background,  virtualtext
 					mode = "background", -- Set the display mode.
 					-- Available methods are false / true / "normal" / "lsp" / "both"
