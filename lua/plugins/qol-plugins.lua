@@ -3,6 +3,13 @@ local opts = { noremap = true, silent = true }
 return {
 	-- A list of small, quality of line plugins.
 
+	-- Tagbar preview for better navigation in large codebases
+	{
+		"preservim/tagbar",
+		config = function()
+			vim.keymap.set("n", "<leader>t", "<cmd>Tagbar<CR>", opts)
+		end,
+	},
 	-- Tmux Navigator for seamless navigation between nvim and tmux panes
 	{ "christoomey/vim-tmux-navigator" },
 	-- Hardtime plugin for preventing bad habits taking over, not really QOL..
@@ -10,7 +17,7 @@ return {
 		"m4xshen/hardtime.nvim",
 		dependencies = { "MunifTanjim/nui.nvim", "nvim-lua/plenary.nvim" },
 		opts = {
-			disabled_filetypes = { "qf", "netrw", "neo-tree", "lazy", "mason", "oil" },
+			disabled_filetypes = { "qf", "netrw", "neo-tree", "lazy", "mason", "oil", "alpha", "tagbar" },
 		},
 	},
 	-- Emoji picker, easy searcher to use emojis.
