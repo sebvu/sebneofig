@@ -105,6 +105,7 @@ return {
 					always_update = false,
 				},
 			})
+			vim.api.nvim_command("autocmd BufReadPost,BufNewFile * ColorizerAttachToBuffer")
 		end,
 	},
 	-- Discord rich presence for blazingly fast neovim presence
