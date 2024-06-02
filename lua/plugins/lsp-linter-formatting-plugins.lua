@@ -19,44 +19,46 @@ return {
 		config = function()
 			require("mason").setup()
 		end,
-		dependencies = {
-			-- automatically install linters and formatters whenever neovim is up
-			"WhoIsSethDaniel/mason-tool-installer.nvim",
-			config = function()
-				require("mason-tool-installer").setup({
-					ensure_installed = {
-						-- ADD NEW MASON PACKAGE HERE (MASON NAME)
-						"actionlint",
-						"bash-language-server",
-						"black",
-						"clang-format",
-						"clangd",
-						"cpplint",
-						"eslint_d",
-						"isort",
-						"lua-language-server",
-						"markdownlint",
-						"marksman",
-						"prettier",
-						"prettierd",
-						"pyright",
-						"ruff",
-						"shellharden",
-						"stylua",
-						"typescript-language-server",
-						"yaml-language-server",
-						"markuplint",
-						"stylelint",
-						"html-lsp",
-						"css-lsp",
-					},
-				})
-			end,
-		},
+	},
+	{
+		-- automatically install linters and formatters whenever neovim is up
+		"WhoIsSethDaniel/mason-tool-installer.nvim",
+		dependencies = { "williamboman/mason.nvim" },
+		config = function()
+			require("mason-tool-installer").setup({
+				ensure_installed = {
+					-- ADD NEW MASON PACKAGE HERE (MASON NAME)
+					"actionlint",
+					"bash-language-server",
+					"black",
+					"clang-format",
+					"clangd",
+					"cpplint",
+					"eslint_d",
+					"isort",
+					"lua-language-server",
+					"markdownlint",
+					"marksman",
+					"prettier",
+					"prettierd",
+					"pyright",
+					"ruff",
+					"shellharden",
+					"stylua",
+					"typescript-language-server",
+					"yaml-language-server",
+					"markuplint",
+					"stylelint",
+					"html-lsp",
+					"css-lsp",
+				},
+			})
+		end,
 	},
 	{ -- extension for mason.nvim that makes it easier to use lsp configs with mason.nvim
 		"williamboman/mason-lspconfig.nvim",
 		-- for lsp languge servers, refer to the github: https://github.com/williamboman/mason-lspconfig.nvim
+		dependencies = { "williamboman/mason.nvim" }, -- require dependencies to be loaded before mason-lspconfig is loaded
 		config = function()
 			require("mason-lspconfig").setup({
 				-- ADD NEW LSP HERE (GITHUB NAME)
@@ -76,6 +78,7 @@ return {
 	},
 	{
 		"neovim/nvim-lspconfig",
+		dependencies = { "williamboman/mason.nvim" },
 		config = function()
 			local capabilities = require("cmp_nvim_lsp").default_capabilities()
 			local lspconfig = require("lspconfig")
@@ -147,6 +150,7 @@ return {
 	-- linting w/nvim-lint
 	{
 		"mfussenegger/nvim-lint",
+		dependencies = { "williamboman/mason.nvim" },
 		event = {
 			"BufReadPre",
 			"BufNewFile",
@@ -186,6 +190,7 @@ return {
 	-- formatting with conform
 	{
 		"stevearc/conform.nvim",
+		dependencies = { "williamboman/mason.nvim" },
 		event = { "BufReadPre", "BufNewFile" },
 		config = function()
 			require("conform").setup({
