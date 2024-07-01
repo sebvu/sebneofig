@@ -5,6 +5,14 @@ return {
 
 	-- Tagbar preview for better navigation in large codebases
 	{
+		"barrett-ruth/live-server.nvim",
+		build = "pnpm add -g live-server",
+		cmd = { "LiveServerStart", "LiveServerStop" },
+		config = function()
+			require("live-server").setup()
+		end,
+	},
+	{
 		"preservim/tagbar",
 		config = function()
 			vim.keymap.set("n", "<leader>t", "<cmd>Tagbar<CR>", opts)
@@ -57,23 +65,52 @@ return {
 		end,
 		ft = { "markdown" },
 	},
-	-- Leetcode for Neovim
+	-- Image ASCII Previewer
+	-- {
+	-- 	"samodostal/image.nvim",
+	-- 	requires = {
+	-- 		"nvim-lua/plenary.nvim",
+	-- 		"m00qek/baleia.nvim", -- colorize text with ansi escape sequence
+	-- 	},
+	-- 	config = function()
+	-- 		require("image").setup({
+	-- 			render = {
+	-- 				min_padding = 5,
+	-- 				show_label = true,
+	-- 				show_image_dimensions = true,
+	-- 				use_dither = true,
+	-- 				foreground_color = true,
+	-- 				background_color = true,
+	-- 			},
+	-- 			events = {
+	-- 				update_on_nvim_resize = true,
+	-- 			},
+	-- 		})
+	-- 	end,
+	-- },
+	-- ANSI Escape Code Dynamic Colorizer for Text
 	{
-		"kawre/leetcode.nvim",
-		build = ":TSUpdate html",
-		dependencies = {
-			"nvim-telescope/telescope.nvim",
-			"nvim-lua/plenary.nvim", -- required by telescope
-			"MunifTanjim/nui.nvim",
+		"m00qek/baleia.nvim", -- colorize text with ansi escape sequence
+		version = "*",
+		config = function()
+			vim.g.baleia = require("baleia").setup({})
 
-			-- optional
-			"nvim-treesitter/nvim-treesitter",
-			"rcarriga/nvim-notify",
-			"nvim-tree/nvim-web-devicons",
-		},
-		opts = {
-			-- configuration goes here
-		},
+			-- Command to colorize the current buffer
+			vim.api.nvim_create_user_command("BaleiaColorize", function()
+				vim.g.baleia.once(vim.api.nvim_get_current_buf())
+			end, { bang = true })
+
+			-- Command to show logs
+			vim.api.nvim_create_user_command("BaleiaLogs", vim.g.baleia.logger.show, { bang = true })
+
+			-- Automatically colorize when lines are added to the buffer
+			vim.api.nvim_create_autocmd({ "BufWinEnter" }, {
+				pattern = "*.txt",
+				callback = function()
+					vim.g.baleia.automatically(vim.api.nvim_get_current_buf())
+				end,
+			})
+		end,
 	},
 	-- Colorizer for colorizing hex codes and other readable colors
 	{

@@ -10,6 +10,14 @@ local config = function()
 	vim.keymap.set("n", "<leader>q", "<cmd>Neotree close<CR>", opts) -- close tree
 
 	require("neo-tree").setup({
+		window = {
+			mappings = {
+				["P"] = { "toggle_preview", config = { use_float = true, use_image_nvim = true } },
+				["l"] = "focus_preview",
+				["<C-b>"] = { "scroll_preview", config = { direction = 10 } },
+				["<C-f>"] = { "scroll_preview", config = { direction = -10 } },
+			},
+		},
 		filesystem = {
 			filtered_items = {
 				visible = true, -- This is what you want: If you set this to `true`, all "hide" just mean "dimmed out"
@@ -29,6 +37,6 @@ return {
 		"nvim-lua/plenary.nvim",
 		"nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
 		"MunifTanjim/nui.nvim",
-		-- "3rd/image.nvim", -- Optional image support in preview window: See `# Preview Mode` for more information
+		"3rd/image.nvim", -- Optional image support in preview window: See `# Preview Mode` for more information
 	},
 }
