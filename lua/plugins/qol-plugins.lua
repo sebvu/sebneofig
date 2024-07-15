@@ -57,6 +57,7 @@ return {
 	},
 	-- Markdown Previewer
 	{
+		-- with yarn or npm
 		"iamcco/markdown-preview.nvim",
 		cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
 		build = "cd app && yarn install",

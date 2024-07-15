@@ -16,8 +16,10 @@ return {
 				treesitter = true,
 				treesitter_context = true,
 				notify = true,
+				noice = true,
 				-- mason = true,
 				telescope = true,
+				alpha = true,
 			},
 		})
 		vim.cmd.colorscheme("catppuccin-mocha")

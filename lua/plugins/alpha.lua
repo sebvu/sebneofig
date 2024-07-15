@@ -69,10 +69,10 @@ return {
 		dashboard.section.footer.val = footer()
 
 		dashboard.section.buttons.val = {
-			dashboard.button("w", "  Find Files", "<cmd>Telescope find_files<CR>"),
-			dashboard.button("a", "⥯  Enter Previous File", "<cmd>Telescope oldfiles<CR>"),
-			dashboard.button("s", "💉 Check Healh", "<cmd>checkhealth<CR>"),
-			dashboard.button("d", "💔 Quit The Grind", "<cmd>qa<CR>"),
+			dashboard.button("f", "  Find Files", "<cmd>Telescope find_files<CR>"),
+			dashboard.button("p", "⥯  Enter Previous File", "<cmd>Telescope oldfiles<CR>"),
+			dashboard.button("c", "💉 Check Healh", "<cmd>checkhealth<CR>"),
+			dashboard.button("q", "💔 Quit The Grind", "<cmd>qa<CR>"),
 		}
 
 		-- vim.cmd([[highlight Include guifg=#89dceb]])

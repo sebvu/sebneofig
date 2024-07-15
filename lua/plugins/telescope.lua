@@ -3,7 +3,7 @@ return {
 		-- Find, Filter, Preview, Pick. All lua, all the time.
 		"nvim-telescope/telescope.nvim",
 		tag = "0.1.6",
-		dependencies = { "nvim-lua/plenary.nvim", "/BurntSushi/ripgrep", "sharkdp/fd" },
+		dependencies = { "nvim-lua/plenary.nvim", "BurntSushi/ripgrep", "sharkdp/fd" },
 		config = function()
 			require("telescope").setup({
 				defaults = {
