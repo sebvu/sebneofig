@@ -43,7 +43,7 @@ return {
 					"prettierd",
 					"pyright",
 					"ruff",
-					"shellharden",
+					"shellcheck",
 					"stylua",
 					"typescript-language-server",
 					"yaml-language-server",
@@ -166,7 +166,7 @@ return {
 				svelte = { "eslint_d" },
 				python = { "ruff" },
 				-- cpp = { "cpplint" },
-				bash = { "shellharden" },
+				bash = { "shellcheck" },
 				-- html = { "markuplint" }, (not needed as it conflicts with prettierd)
 				-- css = { "stylelint" }, (not needed as it conflicts with prettierd)
 				-- markdown = { "markdownlint" },
@@ -213,7 +213,7 @@ return {
 					markdown = { "prettierd" },
 					graphql = { "prettierd" },
 					ruby = { "rubocop" },
-					bash = { "shellharden" },
+					bash = { "shellcheck" },
 				},
 				format_on_save = {
 					lsp_fallback = true, -- if formatter isn't available, fall back to formatting through lsp
