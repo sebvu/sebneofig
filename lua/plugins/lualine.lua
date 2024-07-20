@@ -50,8 +50,9 @@ return {
 	dependencies = { "nvim-tree/nvim-web-devicons" },
 	config = function()
 		local flavour = "mocha"
-		local theme = catppuccin_theme(flavour)
-		-- theme.normal.c.bg = nil -- required when implementing transparent background
+		-- local theme = catppuccin_theme(flavour)
+		local theme = require("lualine.themes.nightfly")
+		theme.normal.c.bg = nil -- removes the lualine background layer
 
 		require("lualine").setup({
 			options = {
