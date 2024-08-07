@@ -1,6 +1,22 @@
 return {
 	-- reaches out to any lsps attached to current buffer, and ask for completion recommendations and further expands it
 	{ "hrsh7th/cmp-nvim-lsp" },
+	-- chatgpt integration
+	{
+		"jackMort/ChatGPT.nvim",
+		event = "VeryLazy",
+		dependencies = {
+			"MunifTanjim/nui.nvim",
+			"nvim-lua/plenary.nvim",
+			"folke/trouble.nvim",
+			"nvim-telescope/telescope.nvim",
+		},
+		config = function()
+			require("chatgpt").setup({
+				api_key_cmd = "pass show api/tokens/openai",
+			})
+		end,
+	},
 	-- copilot autocomplete
 	{
 		"zbirenbaum/copilot.lua",

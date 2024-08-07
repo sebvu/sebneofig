@@ -33,5 +33,7 @@ vim.keymap.set("v", "<C-b>", "gb gv", { remap = true })
 
 -- chatgpt keybinds
 vim.keymap.set("n", "<leader>gt", "<cmd>ChatGPT<CR>", { remap = true })
-vim.keymap.set("n", "<leader>gr", "<cmd>ChatGPTRun explain_code<CR>", { remap = true })
-vim.keymap.set("v", "<leader>gr", "<cmd>ChatGPTRun explain_code<CR>", { remap = true })
+vim.keymap.set("n", "<leader>gr", ":ChatGPTRun ", { remap = true })
+vim.keymap.set("v", "<leader>gr", ":ChatGPTRun ", { remap = true })
+vim.keymap.set("n", "<leader>gec", "<cmd>ChatGPTRun explain_code<CR>", { remap = true })
+vim.keymap.set("v", "<leader>gec", "<cmd>ChatGPTRun explain_code<CR>", { remap = true })
