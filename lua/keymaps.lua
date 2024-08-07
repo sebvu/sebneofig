@@ -30,3 +30,8 @@ vim.keymap.set("v", "<C-_>", "gc gv", { remap = true })
 
 -- block-comment
 vim.keymap.set("v", "<C-b>", "gb gv", { remap = true })
+
+-- chatgpt keybinds
+vim.keymap.set("n", "<leader>gt", "<cmd>ChatGPT<CR>", { remap = true })
+vim.keymap.set("n", "<leader>gr", "<cmd>ChatGPTRun explain_code<CR>", { remap = true })
+vim.keymap.set("v", "<leader>gr", "<cmd>ChatGPTRun explain_code<CR>", { remap = true })

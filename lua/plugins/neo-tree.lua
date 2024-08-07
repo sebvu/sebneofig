@@ -17,6 +17,7 @@ local config = function()
 				["<C-b>"] = { "scroll_preview", config = { direction = 10 } },
 				["<C-f>"] = { "scroll_preview", config = { direction = -10 } },
 			},
+			position = "left",
 		},
 		filesystem = {
 			filtered_items = {
