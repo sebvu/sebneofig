@@ -26,11 +26,8 @@ return {
 		dependencies = { "MunifTanjim/nui.nvim", "nvim-lua/plenary.nvim" },
 		opts = {
 			disabled_filetypes = {
-<<<<<<< HEAD
 				"chatgpt-input",
-=======
 				"chatgpt",
->>>>>>> 36e532f08857855375af01a33339b935010b57b9
 				"qf",
 				"netrw",
 				"neo-tree",
