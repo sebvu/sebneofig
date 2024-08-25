@@ -21,25 +21,25 @@ return {
 	-- Tmux Navigator for seamless navigation between nvim and tmux panes
 	{ "christoomey/vim-tmux-navigator" },
 	-- Hardtime plugin for preventing bad habits taking over, not really QOL..
-	{
-		"m4xshen/hardtime.nvim",
-		dependencies = { "MunifTanjim/nui.nvim", "nvim-lua/plenary.nvim" },
-		opts = {
-			disabled_filetypes = {
-				"chatgpt-input",
-				"chatgpt",
-				"qf",
-				"netrw",
-				"neo-tree",
-				"neo-tree-popup",
-				"lazy",
-				"mason",
-				"oil",
-				"alpha",
-				"tagbar",
-			},
-		},
-	},
+	-- {
+	-- 	"m4xshen/hardtime.nvim",
+	-- 	dependencies = { "MunifTanjim/nui.nvim", "nvim-lua/plenary.nvim" },
+	-- 	opts = {
+	-- 		disabled_filetypes = {
+	-- 			"chatgpt-input",
+	-- 			"chatgpt",
+	-- 			"qf",
+	-- 			"netrw",
+	-- 			"neo-tree",
+	-- 			"neo-tree-popup",
+	-- 			"lazy",
+	-- 			"mason",
+	-- 			"oil",
+	-- 			"alpha",
+	-- 			"tagbar",
+	-- 		},
+	-- 	},
+	-- },
 	-- Emoji picker, easy searcher to use emojis.
 	{
 		"ziontee113/icon-picker.nvim",
