@@ -67,7 +67,7 @@ return {
 					"clangd", -- cpp
 					"bashls", -- bash
 					"marksman", -- markdown
-					"tsserver", -- js/ts
+					"ts_ls", -- js/ts
 					"pyright", -- python
 					"yamlls", -- yaml
 					"html", -- html
@@ -124,7 +124,7 @@ return {
 				capabilities = capabilities,
 				on_attach = on_attach,
 			})
-			lspconfig.tsserver.setup({ -- javascript language server
+			lspconfig.ts_ls.setup({ -- javascript language server
 				capabilities = capabilities,
 				on_attach = on_attach,
 			})
