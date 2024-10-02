@@ -49,14 +49,14 @@ return {
 	"nvim-lualine/lualine.nvim",
 	dependencies = { "nvim-tree/nvim-web-devicons" },
 	config = function()
-		local flavour = "mocha"
+		-- local flavour = "mocha"
 		-- local theme = catppuccin_theme(flavour)
-		local theme = require("lualine.themes.nightfly")
-		theme.normal.c.bg = nil -- removes the lualine background layer
+		-- local theme = require("lualine.themes.nightfly")
+		-- theme.normal.c.bg = nil -- removes the lualine background layer
 
 		require("lualine").setup({
 			options = {
-				theme = theme,
+				theme = "nord",
 				globalstatus = true,
 			},
 
