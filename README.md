@@ -1,3 +1,3 @@
 # my neovim configs
 
-baller
+going to be refactored to a new version
