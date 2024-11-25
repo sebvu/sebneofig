@@ -224,7 +224,9 @@ return {
 		event = { "BufReadPre", "BufNewFile" },
 		config = function()
 			require("conform").setup({
-				stop_after_first = true,
+				opts = {
+					stop_after_first = true,
+				},
 				formatters_by_ft = {
 					-- ADD NEW FORMATTER HERE
 					cpp = { "clang-format" },
@@ -232,10 +234,10 @@ return {
 					-- Conform will run multiple formatters sequentially
 					python = { "isort", "black" },
 					-- Use a sub-list to run only the first available formatter
-					javascript = { { "prettierd", "prettier" } },
-					typescript = { { "prettierd", "prettier" } },
-					javascriptreact = { { "prettierd", "prettier" } },
-					typescriptreact = { { "prettierd", "prettier" } },
+					javascript = { "prettierd", "prettier" },
+					typescript = { "prettierd", "prettier" },
+					javascriptreact = { "prettierd", "prettier" },
+					typescriptreact = { "prettierd", "prettier" },
 					yaml = { "prettierd" },
 					json = { "prettierd" },
 					html = { "prettierd" },
