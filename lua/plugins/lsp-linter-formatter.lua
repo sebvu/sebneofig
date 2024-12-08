@@ -81,6 +81,7 @@ return {
 				-- ADD NEW LSP HERE (GITHUB NAME)
 				ensure_installed = {
 					"lua_ls", -- lua
+					"luau_lsp", -- luau
 					"clangd", -- cpp
 					"bashls", -- bash
 					"marksman", -- markdown
@@ -116,6 +117,10 @@ return {
 			-- lspconfig.languageserver.setup({})
 			-- :LspInfo to check lsps connected to current buffer
 			lspconfig.lua_ls.setup({ -- lua language server
+				capabilities = capabilities,
+				on_attach = on_attach,
+			})
+			lspconfig.luau_lsp.setup({ -- luau language server
 				capabilities = capabilities,
 				on_attach = on_attach,
 			})
