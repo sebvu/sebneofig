@@ -58,4 +58,3 @@ opt.encoding = "UTF-8" -- encoding for current buffer you're in is going to be s
 -- vim.cmd("set softtabstop=4")
 -- vim.cmd("set shiftwidth=4")
 -- vim.cmd("set relativenumber")
-

@@ -29,5 +29,3 @@ vim.keymap.set("i", "<Up>", "<Nop>", opts)
 vim.keymap.set("i", "<Left", "<Nop>", opts)
 vim.keymap.set("i", "<Right>", "<Nop>", opts)
 vim.keymap.set("i", "<Down>", "<Nop>", opts)
-
-
