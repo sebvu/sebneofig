@@ -1,4 +1,3 @@
-
 return {
 	-- reaches out to any lsps attached to current buffer, and ask for completion recommendations and further expands it
 	{ "hrsh7th/cmp-nvim-lsp" },
