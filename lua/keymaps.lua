@@ -2,19 +2,25 @@ local opts = { noremap = true, silent = true }
 
 vim.g.mapleader = " "
 vim.g.maplocalleader = "\\"
--- Scroll h-- Scroll h-- Scroll h-- Scroll h-- Scroll h-- Scroll h-- Scroll h-- Scroll h-- Scroll h-- Scroll h-- Scroll h-- Scroll h-- Scroll h-- Scroll h-- Scroll h-- Scroll h-- Scroll h-- Scroll h-- Scroll h-- Scroll h-- Scroll h-- Scroll h-- Scroll h-- Scroll h-- Scroll h-- Scroll oh
 
 -- Split planes
 vim.keymap.set("n", "<leader>sv", "<cmd>vsplit<CR>", opts) -- Vertical Svlit
 vim.keymap.set("n", "<leader>sh", "<cmd>split<CR>", opts) -- Horizontal Split
 
--- Scroll horizontally (not working, fix)
--- vim.keymap.set("n", "C-l", "20zl", { remap = true } )
--- vim.keymap.set("n", "C-h", "20zh", { remap = true } )
+-- Scroll horizontally
+vim.keymap.set("n", "<leader>ll", "30zl", { remap = true })
+vim.keymap.set("n", "<leader>hh", "30zh", { remap = true })
 
 -- Re-highlight line after indenting
 vim.keymap.set("v", "<", "<gv")
 vim.keymap.set("v", ">", ">gv")
+
+-- chatgpt keybinds
+vim.keymap.set("n", "<leader>gt", "<cmd>ChatGPT<CR>", { remap = true })
+vim.keymap.set("n", "<leader>gr", ":ChatGPTRun ", { remap = true })
+vim.keymap.set("v", "<leader>gr", ":ChatGPTRun ", { remap = true })
+vim.keymap.set("n", "<leader>gec", "<cmd>ChatGPTRun explain_code<CR>", { remap = true })
+vim.keymap.set("v", "<leader>gec", "<cmd>ChatGPTRun explain_code<CR>", { remap = true })
 
 -- Disable arrowkeys
 vim.keymap.set("n", "<Up>", "<Nop>", opts)
