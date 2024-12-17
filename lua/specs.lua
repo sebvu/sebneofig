@@ -12,6 +12,8 @@ vim.api.nvim_create_autocmd("FileType", {
 		"css",
 		"html",
 		"lua",
+		"make",
+		"toml",
 	},
 	callback = function()
 		vim.opt_local.shiftwidth = 2
