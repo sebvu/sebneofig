@@ -2,8 +2,7 @@
 --
 -- 🚀 mason-tool-installer.nvim: automatically install any mason.nvim LSPs not already installed
 --      - add all new MASON packages there (ALL LSPs, LINTERS AND FORMATTERS by their MASONLSP name, not actual LSP name)
--- 🍹 mason-lspconfig: add any newly installed LSPs
--- for lsp languge servers, refer to the github: https://github.com/williamboman/mason-lspconfig.nvim
+-- 🍹 mason-lspconfig: add any newly installed LSPs for lsp languge servers, refer to the github: https://github.com/williamboman/mason-lspconfig.nvim
 --      - in ensure_installed (add the name of the actual LSP name)
 --      - in lspconfig.language.setup({})
 -- 💬 nvim-lint: add new linter
@@ -50,7 +49,7 @@ return {
 					"black",
 					"clang-format",
 					"clangd",
-					"cpplint",
+					-- "cpplint",
 					"eslint_d",
 					"isort",
 					"lua-language-server",
@@ -68,6 +67,7 @@ return {
 					"stylelint",
 					"html-lsp",
 					"css-lsp",
+					"taplo",
 				},
 			})
 		end,
@@ -90,6 +90,7 @@ return {
 					"yamlls", -- yaml
 					"html", -- html
 					"cssls", -- css
+					"taplo", -- TOML
 				},
 			})
 		end,
@@ -163,6 +164,10 @@ return {
 				on_attach = on_attach,
 			})
 			lspconfig.html.setup({ -- html
+				capabilities = capabilities,
+				on_attach = on_attach,
+			})
+			lspconfig.taplo.setup({ -- TOML
 				capabilities = capabilities,
 				on_attach = on_attach,
 			})
@@ -269,5 +274,42 @@ return {
 			end, { desc = "Format file or range (in visual mode)" })
 		end,
 		opts = {},
+	},
+	{
+		"folke/trouble.nvim",
+		opts = {}, -- for default options, refer to the configuration section for custom setup.
+		cmd = "Trouble",
+		keys = {
+			{
+				"<leader>xx",
+				"<cmd>Trouble diagnostics toggle<cr>",
+				desc = "Diagnostics (Trouble)",
+			},
+			{
+				"<leader>xX",
+				"<cmd>Trouble diagnostics toggle filter.buf=0<cr>",
+				desc = "Buffer Diagnostics (Trouble)",
+			},
+			{
+				"<leader>cs",
+				"<cmd>Trouble symbols toggle focus=false<cr>",
+				desc = "Symbols (Trouble)",
+			},
+			{
+				"<leader>cl",
+				"<cmd>Trouble lsp toggle focus=false win.position=right<cr>",
+				desc = "LSP Definitions / references / ... (Trouble)",
+			},
+			{
+				"<leader>xL",
+				"<cmd>Trouble loclist toggle<cr>",
+				desc = "Location List (Trouble)",
+			},
+			{
+				"<leader>xQ",
+				"<cmd>Trouble qflist toggle<cr>",
+				desc = "Quickfix List (Trouble)",
+			},
+		},
 	},
 }
