@@ -22,9 +22,9 @@ vim.api.nvim_create_autocmd("FileType", {
 })
 
 -- color column
-vim.api.nvim_create_autocmd("FileType", {
-	pattern = { "c", "cpp" },
-	callback = function()
-		vim.opt_local.colorcolumn = "80"
-	end,
-})
+-- vim.api.nvim_create_autocmd("FileType", {
+-- 	pattern = { "c", "cpp" },
+-- 	callback = function()
+-- 		vim.opt_local.colorcolumn = "80"
+-- 	end,
+-- })
