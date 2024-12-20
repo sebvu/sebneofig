@@ -233,7 +233,8 @@ return {
 				show_status = true, -- Display idle status, disable to hide the rich presence on idle
 				timeout = 300000, -- Timeout in milliseconds after which the idle status is set, 0 to display immediately
 				disable_on_focus = false, -- Do not display idle status when neovim is focused
-				text = "Idle", -- Text to display when idle
+				text = "vim coping", -- Text to display when idle
+				icon = "https://ih1.redbubble.net/image.5292131909.9696/st,small,507x507-pad,600x600,f8f8f8.u4.jpg",
 				tooltip = "💤", -- Text to display when hovering over the idle image
 			},
 			text = {
@@ -264,18 +265,18 @@ return {
 				--     type = 2,                              -- 0 = language, 1 = file browser, 2 = plugin manager, 3 = lsp manager, 4 = vcs; defaults to language
 				--   },
 				--   ['Cargo.toml'] = 'crates',
-				cpp = {
-					name = "cpp",
-					icon = "https://ih1.redbubble.net/image.5292131909.9696/st,small,507x507-pad,600x600,f8f8f8.u4.jpg",
-					tooltip = "C (with classes)",
-					type = 0,
-				},
-				h = {
-					name = "header file",
-					icon = "https://ih1.redbubble.net/image.5292131909.9696/st,small,507x507-pad,600x600,f8f8f8.u4.jpg",
-					tooltip = "header filesies",
-					type = 0,
-				},
+				-- cpp = {
+				-- 	name = "cpp",
+				-- 	icon = "https://ih1.redbubble.net/image.5292131909.9696/st,small,507x507-pad,600x600,f8f8f8.u4.jpg",
+				-- 	tooltip = "C (with classes)",
+				-- 	type = 0,
+				-- },
+				-- h = {
+				-- 	name = "header file",
+				-- 	icon = "https://ih1.redbubble.net/image.5292131909.9696/st,small,507x507-pad,600x600,f8f8f8.u4.jpg",
+				-- 	tooltip = "header filesies",
+				-- 	type = 0,
+				-- },
 			},
 		},
 	},
