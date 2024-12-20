@@ -8,8 +8,8 @@ vim.keymap.set("n", "<leader>sv", "<cmd>vsplit<CR>", opts) -- Vertical Svlit
 vim.keymap.set("n", "<leader>sh", "<cmd>split<CR>", opts) -- Horizontal Split
 
 -- Scroll horizontally
-vim.keymap.set("n", "<leader>ll", "30zl", { remap = true })
-vim.keymap.set("n", "<leader>hh", "30zh", { remap = true })
+vim.keymap.set("n", "<leader>ll", "60zl", { remap = true })
+vim.keymap.set("n", "<leader>hh", "60zh", { remap = true })
 
 -- Re-highlight line after indenting
 vim.keymap.set("v", "<", "<gv")
